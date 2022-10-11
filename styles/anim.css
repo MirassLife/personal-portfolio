@@ -1,3 +1,58 @@
+.hover-underline-animation {
+    display: inline-block;
+    position: relative;
+    color: var(--text-accent);
+}
+
+.hover-underline-animation:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--text-accent);
+    transform-origin: bottom right;
+    transition: transform 0.4s ease-out;
+}
+
+.hover-underline-animation:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.section-number .number {
+    width: 0;
+    padding-right: 0;
+}
+
+.section-number .number.anim-active {
+    width: 40px;
+    transition: all 1s ease-out;
+}
+
+.bracket {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    border-top: solid 0px var(--quarternary-color);
+    border-left: solid 0px var(--quarternary-color);
+    border-bottom: solid 0px var(--quarternary-color);
+}
+
+.bracket.anim-active {
+    opacity: 1;
+    width: 20px;
+    height: 200px;
+    border-top: solid 1px var(--quarternary-color);
+    border-left: solid 1px var(--quarternary-color);
+    border-bottom: solid 1px var(--quarternary-color);
+    transition: all 1s ease-out;
+    transition-delay: 2s, 3s, 2s;
+    transition-property: height, width, opacity;
+}
+
 .fade-down {
     transform: translateY(-20px);
     opacity: 0;
@@ -11,7 +66,7 @@
 
 .fade-in {
     opacity: 0;
-    transition: all 0.3s ease-out;
+    transition: all 1s ease-out;
 }
 
 .fade-in.anim-active {
@@ -19,17 +74,21 @@
 }
 
 .anim-first {
-    transition-delay: 0.3s;
+    transition-delay: 3.6s;
 }
 
 .anim-second {
-    transition-delay: 0.4s;
+    transition-delay: 4s;
 }
 
 .anim-third {
-    transition-delay: 0.5s;
+    transition-delay: 4.4s;
 }
 
 .anim-fourth {
-    transition-delay: 0.6s;
+    transition-delay: 4.8s;
+}
+
+.anim-fifth {
+    transition-delay: 5.2s;
 }

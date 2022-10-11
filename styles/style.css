@@ -160,30 +160,6 @@ p {
     font-size: 1.2em !important;
 }
 
-.hover-underline-animation {
-    display: inline-block;
-    position: relative;
-    color: var(--text-accent);
-}
-
-.hover-underline-animation:after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: var(--text-accent);
-    transform-origin: bottom right;
-    transition: transform 0.4s ease-out;
-}
-
-.hover-underline-animation:hover:after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
-}
-
 .navbar-number {
     font-size: 1.1em;
 }
@@ -234,14 +210,6 @@ p {
 
 .number p {
     font-size: 1.7em;
-}
-
-.section-number .bracket {
-    width: 20px;
-    height: 200px;
-    border-top: solid 1px var(--quarternary-color);
-    border-left: solid 1px var(--quarternary-color);
-    border-bottom: solid 1px var(--quarternary-color);
 }
 
 .section-content {
