@@ -1,0 +1,26 @@
+.fade-down {
+    transform: translateY(-20px);
+    opacity: 0;
+    transition: all 1s ease-out;
+}
+
+.fade-down.anim-active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.anim-first {
+    transition-delay: 1s;
+}
+
+.anim-second {
+    transition-delay: 2s;
+}
+
+.anim-third {
+    transition-delay: 3s;
+}
+
+.anim-fourth {
+    transition-delay: 4s;
+}
