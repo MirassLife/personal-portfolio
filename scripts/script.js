@@ -44,6 +44,7 @@ function closeAccordions() {
 
 var intro_content = document.getElementById('intro-content');
 var fade_downs = document.getElementsByClassName('fade-down');
+var fade_ins = document.getElementsByClassName('fade-in');
 
 window.onscroll = handleFadeAnimations();
 
@@ -52,6 +53,12 @@ function handleFadeAnimations() {
 		console.log(fade_downs[i]);
 		if (isInViewport(fade_downs[i])) {
 			fade_downs[i].classList.add('anim-active');
+		}
+	}
+	for (var i = 0; i < fade_ins.length; i++) {
+		console.log(fade_ins[i]);
+		if (isInViewport(fade_ins[i])) {
+			fade_ins[i].classList.add('anim-active');
 		}
 	}
 }

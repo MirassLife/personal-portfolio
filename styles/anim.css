@@ -1,7 +1,7 @@
 .fade-down {
     transform: translateY(-20px);
     opacity: 0;
-    transition: all 1s ease-out;
+    transition: all 0.3s ease-out;
 }
 
 .fade-down.anim-active {
@@ -9,18 +9,27 @@
     transform: translateY(0);
 }
 
+.fade-in {
+    opacity: 0;
+    transition: all 0.3s ease-out;
+}
+
+.fade-in.anim-active {
+    opacity: 1;
+}
+
 .anim-first {
-    transition-delay: 1s;
+    transition-delay: 0.3s;
 }
 
 .anim-second {
-    transition-delay: 2s;
+    transition-delay: 0.4s;
 }
 
 .anim-third {
-    transition-delay: 3s;
+    transition-delay: 0.5s;
 }
 
 .anim-fourth {
-    transition-delay: 4s;
+    transition-delay: 0.6s;
 }
