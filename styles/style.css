@@ -1,8 +1,9 @@
 :root {
     --primary-color: #;
-    --secondary-color: #;
-    --tertiary-color: #;
-    --quarternary-color: #;
+    --pastel-blue: #A9E5FF;
+    --light-green: rgb(176, 231, 124);
+    --pastel-pink: rgb(206, 148, 240);
+    --light-yellow: rgb(241, 243, 105);
     --background-color: #303437;
     --header-font: 'Lexend Deca', sans-serif;
     --font-family: 'Lexend Deca', sans-serif;
@@ -31,10 +32,32 @@ body {
     background-color: var(--background-color);
 }
 
-canvas {
+#header-canv {
     width: 100%;
-    -webkit-clip-path: url(#svgTextPath);
-    clip-path: url(#svgTextPath);
+    height: 110px;
+    -webkit-clip-path: url(#headerTextPath);
+    clip-path: url(#headerTextPath);
+}
+
+#about-canv {
+    height: 120px;
+    width: 146.75px;
+    -webkit-clip-path: url(#aboutTextPath);
+    clip-path: url(#aboutTextPath);
+}
+
+#portfolio-canv {
+    height: 120px;
+    width: 218.13px;
+    -webkit-clip-path: url(#portfolioTextPath);
+    clip-path: url(#portfolioTextPath);
+}
+
+#contact-canv {
+    height: 120px;
+    width: 186.3px;
+    -webkit-clip-path: url(#contactTextPath);
+    clip-path: url(#contactTextPath);
 }
 
 h1 {
@@ -44,7 +67,7 @@ h1 {
 }
 
 h2 {
-    font-size: 2em;
+    font-size: 3em;
     font-family: var(--header-font);
     color: white;
 }
@@ -55,8 +78,9 @@ h3 {
 }
 
 p {
-    font-size: 1.1em;
+    font-size: 1.2em;
     font-family: var(--font-family);
+    color: white;
 }
 
 .no-margin {
@@ -72,19 +96,219 @@ p {
 }
 
 .content-wrapper {
+    position: relative;
     max-width: 1400px;
     width: 1400px;
 }
 
 .header-wrapper {
+    height: 500px;
+    position: relative;
+    display: block;
+}
+
+.navigation-wrapper {
     position: relative;
 }
 
-.header-wrapper #header-canvas {
+.canvas-wrapper {
     position: absolute;
-    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    width: 800px;
 }
 
-.header-wrapper #header-text {
+.card-wrapper {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.navigation {
     position: absolute;
+    top: 52px;
+    display: flex;
+    width: 800px;
+    justify-content: space-between;
+}
+
+.navigation a {
+    font-family: var(--header-font);
+    font-size: 3em;
+    font-weight: 800;
+    color: white;
+    user-select: none;
+    cursor: pointer;
+    opacity: 1;
+    transition: opacity 0.25s ease-in-out;
+}
+
+.navigation a:hover {
+    opacity: 0;
+    transition: opacity 0.25s ease-in-out;
+}
+
+.button {
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 1.4em;
+    color: white;
+    border: solid 1px white;
+    padding: 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    user-select: none;
+    transition: 0.5s !important;
+}
+
+.button a {
+    user-select: none;
+    margin: 20px 0 !important;
+    background-color: inherit;
+}
+
+#about>.button:hover {
+    box-shadow: inset 6.5em 0 0 0 var(--pastel-blue);
+}
+
+#about>.button {
+    color: #000;
+    border: solid 1px #000;
+}
+
+#skills>.button:hover {
+    box-shadow: inset 6.5em 0 0 0 var(--light-green);
+}
+
+#portfolio>.button:hover {
+    box-shadow: inset 6.5em 0 0 0 var(--pastel-pink);
+}
+
+#contact>.button {
+    color: #000;
+    border: solid 1px #000;
+}
+
+#contact>.button:hover {
+    box-shadow: inset 6.5em 0 0 0 var(--light-yellow) !important;
+}
+
+.button:hover {
+    filter: brightness(90%);
+}
+
+.section {
+    flex: 1;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.horizontal {
+    flex-direction: row;
+}
+
+.vertical {
+    flex-direction: column;
+}
+
+.card {
+    position: relative;
+    height: 100%;
+    border-radius: 100px;
+    padding: 50px;
+    opacity: 0.8;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+}
+
+.card p {
+    height: 170px;
+    padding-bottom: 0;
+    overflow-y: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 7;
+    -webkit-box-orient: vertical;
+    white-space: normal;
+}
+
+.card h2 {
+    user-select: none;
+}
+
+.card img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: auto;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.card a.button {
+    position: absolute;
+    bottom: 50px;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.card:hover a.button {
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.card:hover {
+    flex: 2 !important;
+    border-radius: 150px;
+    padding: 50px 70px;
+    opacity: 1 !important;
+    transition: all 0.5s ease-in-out;
+}
+
+#about {
+    width: 100%;
+    flex: 1;
+    background-color: var(--pastel-blue);
+}
+
+#about>h2,
+#about>p {
+    color: #000;
+}
+
+#skills {
+    width: 100%;
+    flex: 1;
+    background-color: var(--light-green);
+}
+
+#portfolio {
+    width: 100%;
+    flex: 1;
+    background-color: var(--pastel-pink);
+}
+
+#contact {
+    width: 100%;
+    flex: 1;
+    background-color: var(--light-yellow);
+}
+
+#contact>div {
+    height: 32px;
+    padding: 0 50px;
+    display: flex;
+    align-items: center;
+}
+
+#contact>div>p {
+    height: fit-content;
+    margin-left: 20px;
+}
+
+#contact>h2,
+#contact>div>p {
+    color: #000;
 }

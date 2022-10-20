@@ -15,8 +15,16 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+			integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer" />
+		<link
 			href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@200;400;800&display=swap"
 			rel="stylesheet" />
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
 	</head>
 
 	<body>
@@ -25,25 +33,136 @@
 		<div class="bg-wrapper">
 			<div class="content-wrapper">
 				<div class="header-wrapper">
-					<div id="header-canvas">
-						<canvas id="canv" width="32" height="32"></canvas>
+					<canvas id="header-canv" width="32" height="8"></canvas>
+					<svg height="0" width="0">
+						<defs>
+							<clipPath id="headerTextPath">
+								<text
+									x="0"
+									y="100"
+									lengthAdjust="spacing"
+									font-family="Lexend Deca"
+									font-size="6em"
+									font-weight="800">
+									Sam Colbourne
+								</text>
+							</clipPath>
+						</defs>
+					</svg>
+					<svg height="0" width="0">
+						<defs>
+							<clipPath id="aboutTextPath">
+								<text
+									x="0"
+									y="100"
+									lengthAdjust="spacing"
+									font-family="Lexend Deca"
+									font-size="3em"
+									font-weight="800">
+									about
+								</text>
+							</clipPath>
+						</defs>
+					</svg>
+					<svg height="0" width="0">
+						<defs>
+							<clipPath id="portfolioTextPath">
+								<text
+									x="0"
+									y="100"
+									lengthAdjust="spacing"
+									font-family="Lexend Deca"
+									font-size="3em"
+									font-weight="800">
+									portfolio
+								</text>
+							</clipPath>
+						</defs>
+					</svg>
+					<svg height="0" width="0">
+						<defs>
+							<clipPath id="contactTextPath">
+								<text
+									x="0"
+									y="100"
+									lengthAdjust="spacing"
+									font-family="Lexend Deca"
+									font-size="3em"
+									font-weight="800">
+									contact
+								</text>
+							</clipPath>
+						</defs>
+					</svg>
+					<div class="navigation-wrapper">
+						<div class="canvas-wrapper">
+							<canvas id="about-canv" width="32" height="8"></canvas>
+							<canvas id="portfolio-canv" width="32" height="8"></canvas>
+							<canvas id="contact-canv" width="32" height="8"></canvas>
+						</div>
+						<div class="navigation">
+							<a onclick="window.scrollTo(0,99999);return false;"> about </a>
+							<a> portfolio </a>
+							<a> contact </a>
+						</div>
 					</div>
-					<div id="header-text">
-						<svg height="0" width="0">
-							<defs>
-								<clipPath id="svgTextPath">
-									<text
-										x="0"
-										y="300"
-										lengthAdjust="spacing"
-										font-family="Lexend Deca"
-										font-size="6em"
-										font-weight="800">
-										Sam Colbourne
-									</text>
-								</clipPath>
-							</defs>
-						</svg>
+				</div>
+				<div class="card-wrapper">
+					<div
+						class="section horizontal"
+						id="section-one"
+						style="margin-bottom: 10px">
+						<div class="card" id="about">
+							<h2>about.</h2>
+							<p>
+								i'm a 22 year old software/web developer, which a passion for
+								developing nice-looking frontend applications and webpages.
+								<br />
+								i started when i was young, and i'm always looking to learn new
+								technologies, techniques, and designs to better myself and my
+								work.
+							</p>
+							<a class="button">button</a>
+						</div>
+						<div class="card" id="skills">
+							<h2>skills.</h2>
+							<p>
+								<strong>tech: </strong>html5, css3, js, vue.js, node, java,
+								postresql, pascal, git<br />
+								<strong>software: </strong>webstorm, intellij, datagrip, adobe
+								suite, microsoft office, git, vscode
+							</p>
+							<img
+								src="https://pbs.twimg.com/profile_images/949787136030539782/LnRrYf6e_400x400.jpg" />
+							<a class="button">button</a>
+						</div>
+					</div>
+					<div
+						class="section vertical"
+						id="section-two"
+						style="margin-top: 10px; margin-bottom: 20px">
+						<div class="card" id="portfolio">
+							<h2>portfolio.</h2>
+							<p>Coming Soon</p>
+							<img
+								src="https://pbs.twimg.com/profile_images/949787136030539782/LnRrYf6e_400x400.jpg" />
+							<a class="button">button</a>
+						</div>
+						<div class="card" id="contact">
+							<h2>contact.</h2>
+							<div>
+								<i class="fa-solid fa-at fa-2x"></i>
+								<p>
+									<a href="mailto:mirass.life@gmail.com" style="color: #000"
+										>mirass.life@gmail.com</a
+									>
+								</p>
+							</div>
+							<div>
+								<i class="fa-brands fa-twitter fa-2x"></i>
+								<p>coming soon</p>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>

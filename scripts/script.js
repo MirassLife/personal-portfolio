@@ -77,13 +77,26 @@ function handleFadeAnimations() {
 	}
 }
 
-var c = document.getElementById('canv');
-var $ = c.getContext('2d');
+var headerCanv = document.getElementById('header-canv');
+var headerCanvContext = headerCanv.getContext('2d');
+var aboutCanv = document.getElementById('about-canv');
+var aboutCanvContext = aboutCanv.getContext('2d');
+var portfolioCanv = document.getElementById('portfolio-canv');
+var portfolioCanvContext = portfolioCanv.getContext('2d');
+var contactCanv = document.getElementById('contact-canv');
+var contactCanvContext = contactCanv.getContext('2d');
 
 var col = function (x, y, r, g, b) {
-	$.fillStyle = 'rgb(' + r + ',' + g + ',' + b + ')';
-	$.fillRect(x, y, 1, 1);
+	headerCanvContext.fillStyle = 'rgb(' + r + ',' + g + ',' + b + ')';
+	headerCanvContext.fillRect(x, y, 1, 1);
+	aboutCanvContext.fillStyle = 'rgb(' + r + ',' + g + ',' + b + ')';
+	aboutCanvContext.fillRect(x, y, 1, 1);
+	portfolioCanvContext.fillStyle = 'rgb(' + r + ',' + g + ',' + b + ')';
+	portfolioCanvContext.fillRect(x, y, 1, 1);
+	contactCanvContext.fillStyle = 'rgb(' + r + ',' + g + ',' + b + ')';
+	contactCanvContext.fillRect(x, y, 1, 1);
 };
+
 var R = function (x, y, t) {
 	return Math.floor(192 + 64 * Math.cos((x * x - y * y) / 300 + t));
 };
@@ -119,3 +132,40 @@ var run = function () {
 };
 
 run();
+
+// gsap.registerPlugin(ScrollTrigger);
+
+// const introduction = gsap
+// 	.timeline({
+// 		scrollTrigger: {
+// 			trigger: '.card-wrapper',
+// 			scrub: true,
+// 			start: 'top center',
+// 			end: '+=50%',
+// 			markers: { startColor: 'green', endColor: 'red', fontSize: '12px' },
+// 		},
+// 	})
+
+// 	.from('.card-wrapper .section #about', {
+// 		opacity: 0,
+// 		translateX: -200,
+// 		ease: 'none',
+// 	})
+
+// 	.from('.card-wrapper .section #skills', {
+// 		opacity: 0,
+// 		translateX: 200,
+// 		ease: 'none',
+// 	})
+
+// 	.from('.card-wrapper .section #portfolio', {
+// 		opacity: 0,
+// 		translateX: -200,
+// 		ease: 'none',
+// 	})
+
+// 	.from('.card-wrapper .section #contact', {
+// 		opacity: 0,
+// 		translateX: 200,
+// 		ease: 'none',
+// 	});
