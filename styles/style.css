@@ -4,6 +4,7 @@
     --light-green: rgb(176, 231, 124);
     --pastel-pink: rgb(206, 148, 240);
     --light-yellow: rgb(241, 243, 105);
+    --light-orange: rgb(247, 164, 109);
     --background-color: #303437;
     --header-font: 'Lexend Deca', sans-serif;
     --font-family: 'Lexend Deca', sans-serif;
@@ -63,13 +64,13 @@ body {
 h1 {
     font-size: 7em;
     font-family: var(--header-font);
-    color: white;
+    color: black;
 }
 
 h2 {
     font-size: 3em;
     font-family: var(--header-font);
-    color: white;
+    color: black;
 }
 
 h3 {
@@ -80,7 +81,7 @@ h3 {
 p {
     font-size: 1.2em;
     font-family: var(--font-family);
-    color: white;
+    color: black;
 }
 
 .no-margin {
@@ -139,6 +140,7 @@ p {
     color: white;
     user-select: none;
     cursor: pointer;
+    text-decoration: none;
     opacity: 1;
     transition: opacity 0.25s ease-in-out;
 }
@@ -152,12 +154,13 @@ p {
     font-family: var(--font-family);
     font-weight: 700;
     font-size: 1.4em;
-    color: white;
-    border: solid 1px white;
+    color: black;
+    border: solid 1px black;
     padding: 20px;
     border-radius: 30px;
     cursor: pointer;
     user-select: none;
+    text-decoration: none;
     transition: 0.5s !important;
 }
 
@@ -171,22 +174,16 @@ p {
     box-shadow: inset 6.5em 0 0 0 var(--pastel-blue);
 }
 
-#about>.button {
-    color: #000;
-    border: solid 1px #000;
-}
-
 #skills>.button:hover {
     box-shadow: inset 6.5em 0 0 0 var(--light-green);
 }
 
-#portfolio>.button:hover {
-    box-shadow: inset 6.5em 0 0 0 var(--pastel-pink);
+#work>.button:hover {
+    box-shadow: inset 6.5em 0 0 0 var(--light-orange);
 }
 
-#contact>.button {
-    color: #000;
-    border: solid 1px #000;
+#portfolio>.button:hover {
+    box-shadow: inset 8.3em 0 0 0 var(--pastel-pink);
 }
 
 #contact>.button:hover {
@@ -198,6 +195,7 @@ p {
 }
 
 .section {
+    height: 420px;
     flex: 1;
     display: flex;
     gap: 20px;
@@ -214,7 +212,7 @@ p {
 
 .card {
     position: relative;
-    height: 100%;
+    height: 100% !important;
     border-radius: 100px;
     padding: 50px;
     opacity: 0.8;
@@ -227,10 +225,6 @@ p {
     padding-bottom: 0;
     overflow-y: hidden;
     text-overflow: ellipsis;
-    display: -webkit-box !important;
-    -webkit-line-clamp: 7;
-    -webkit-box-orient: vertical;
-    white-space: normal;
 }
 
 .card h2 {
@@ -273,15 +267,16 @@ p {
     background-color: var(--pastel-blue);
 }
 
-#about>h2,
-#about>p {
-    color: #000;
-}
-
 #skills {
     width: 100%;
     flex: 1;
     background-color: var(--light-green);
+}
+
+#work {
+    width: 100%;
+    flex: 1;
+    background-color: var(--light-orange);
 }
 
 #portfolio {
@@ -306,9 +301,4 @@ p {
 #contact>div>p {
     height: fit-content;
     margin-left: 20px;
-}
-
-#contact>h2,
-#contact>div>p {
-    color: #000;
 }
